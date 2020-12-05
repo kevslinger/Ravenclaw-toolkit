@@ -1,0 +1,12 @@
+{% extends "home.html" %}
+
+{% block display %}
+
+<h2>Invalid Entry: Looks like the Page you entered doesn't Exist!</h2>
+<p style="font-size: 2rem">
+  You entered:<br>
+  Book Number: {{booknum}}<br>
+  Page Number: {{pagenum}}<br>
+  But that book has {{maxpagenum}} total pages!
+</p>
+    {% endblock %}

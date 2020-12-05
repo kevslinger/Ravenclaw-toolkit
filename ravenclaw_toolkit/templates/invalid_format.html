@@ -1,0 +1,11 @@
+{% extends "home.html" %}
+
+{% block display %}
+
+<h2>Invalid Data Format: Please ensure your <br>Book Number and Page Number are integers</h2>
+<p style="font-size: 2rem">
+  You entered:<br>
+  Book Number: {{booknum}}<br>
+  Page Number: {{pagenum}}
+</p>
+    {% endblock %}
