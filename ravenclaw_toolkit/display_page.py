@@ -1,6 +1,7 @@
 import argparse
 import webbrowser
 import os
+import constants
 
 
 ###################################################
@@ -11,6 +12,10 @@ import os
 ###################################################
 
 
+def display_page(book, page):
+    webbrowser.open(rf"file://{os.path.join(constants.BASE_DIR, 'Books', f'HP{book}', f'hp{book}_{page}.pdf')}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('book', type=int, help='Number book (i.e. Goblet of Fire is 4)')
@@ -18,7 +23,7 @@ def main():
 
     args = parser.parse_args()
 
-    webbrowser.open(rf"file://{os.path.join(os.getcwd(), 'Books', f'HP{args.book}', f'hp{args.book}_{args.page}.pdf')}")
+    display_page(args.book, args.page)
     
 
 if __name__ == '__main__':
