@@ -2,14 +2,20 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 import os
 
 
-PATHS = ('J.K._Rowling_HP_1_Harry_Potter_and_the_S.pdf', '2-harry-potter-and-the-chamber-of-secrets.pdf', 'J.K. Rowling - HP 3 - Harry Potter and the Prisoner of Azkaban.pdf', 'J.K.-Rowling-HP-4-Harry-Potter-and-the-Goblet-of-Fire.pdf', '5_-_harry_potter_and_the_order_of_the_phoenix_chapter_37.pdf', 'J.K.-Rowling-HP-6-Harry-Potter-and-the-Half-Blood-Prince.pdf', 'J.K. Rowling - HP 7 - Harry Potter and the Deathly Hallows.pdf')
+TITLES = ('Harry Potter and the Sorcerer\'s Stone',
+         'Harry Potter and the Chamber of Secrets',
+         'Harry Potter and the Prisoner of Azkaban',
+         'Harry Potter and the Goblet of Fire',
+         'Harry Potter and the Order of the Phoenix',
+         'Harry Potter and the Half-Blood Prince',
+         'Harry Potter and the Deathly Hallows')
 
 OFFSETS = (12, 12, 14, 16, 16, 14, 17, )
 TOTAL_PAGES = (309, 341, 435, 734, 870, 652, 758)
 
 
-for idx in range(0, len(OFFSETS)):
-    inputpdf = PdfFileReader(open(os.path.join('/Users/kevin/Downloads', PATHS[idx]), 'rb'))
+for idx in range(len(TITLES)):
+    inputpdf = PdfFileReader(open(TITLES[idx] + '.pdf', 'rb'))
 
     for i in range(inputpdf.numPages):
         if i < OFFSETS[idx]:
