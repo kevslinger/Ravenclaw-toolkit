@@ -12,10 +12,10 @@ TITLES = ('Harry Potter and the Sorcerer\'s Stone',
 
 OFFSETS = (12, 12, 14, 16, 16, 14, 17, )
 TOTAL_PAGES = (309, 341, 435, 734, 870, 652, 758)
-
+BOOKS = 'Books'
 
 for idx in range(len(TITLES)):
-    inputpdf = PdfFileReader(open(TITLES[idx] + '.pdf', 'rb'))
+    inputpdf = PdfFileReader(open(os.path.join(BOOKS, TITLES[idx] + '.pdf'), 'rb'))
 
     for i in range(inputpdf.numPages):
         if i < OFFSETS[idx]:
@@ -24,7 +24,7 @@ for idx in range(len(TITLES)):
             break
         output = PdfFileWriter()
         output.addPage(inputpdf.getPage(i))
-        output_dir = os.path.join('HP', f'HP{idx+1}')
+        output_dir = os.path.join(BOOKS, f'HP{idx+1}')
         if not os.path.exists(output_dir):
             os.mkdir(output_dir)
         with open(os.path.join(output_dir, f'hp{(idx+1)}_{(i+1-OFFSETS[idx])}.pdf'), 'wb') as outputStream:

@@ -13,4 +13,4 @@ To split your Harry Potter PDFs into pages, first you'll need to move your PDFs 
 * Harry Potter and the Half-Blood Prince.pdf
 * Harry Potter and the Deathly Hallows.pdf
 
-Once you do that, you're ready to run our program! (For now, assume python experience). Open up your terminal and run `python HP_book_splitter.py`. Your results will be waiting in the `HP` folder!
+Once you do that, you're ready to run our program! (For now, assume python experience). Open up your terminal and run `python HP_book_splitter.py`. Your results will be waiting in the `Books` folder!
