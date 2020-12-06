@@ -3,6 +3,6 @@
 {% block display %}
 
 <h2>Here is the page you requested! It is page {{chapter_pagenum}} of Chapter {{chapternum}} from Book {{booknum}}</h3>
-<img src="{{ url_for('static', filename=filename) }}" alt="{{'Error: Could not find ' + filename }}"/>
+<img src="{{ url_for('static', filename=filename) }}" alt="{{'Error: Could not find ' + filename }}" height="453px" width="305px"/>
 
     {% endblock %}
