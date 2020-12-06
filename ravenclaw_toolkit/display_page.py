@@ -13,7 +13,7 @@ import constants
 
 
 def display_page(book, page):
-    webbrowser.open(rf"file://{os.path.join(constants.BASE_DIR, 'Books', f'HP{book}', f'hp{book}_{page}.pdf')}")
+    webbrowser.open(rf"file://{os.path.join(os.getcwd(), 'static', f'HP{book}', f'hp{book}_{page}.pdf')}")
 
 
 def main():
