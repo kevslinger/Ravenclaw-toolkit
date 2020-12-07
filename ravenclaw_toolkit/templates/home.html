@@ -4,15 +4,27 @@
     <title>Ravenclaw Toolkit</title>
     <style>
       h1 {color: black;
-          font-size: 5rem;}
+          font-size: 4rem;}
+      h2 {color: black;
+          font-size: 1rem;}
+      h3 {color: black;
+          font-size: 1rem;}
       html { 
-          background: #d4e4ff no-repeat center center fixed; 
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover;
-          text-align: center;
-          font-family: Avenir;
+    background: #d4e4ff no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    font-family: Avenir;
+      }
+      .footer {
+          color: white;
+          bottom: 0;
+          width: 100%;
+          height: 2.5rem;            /* Footer height */
+          text-align: right;
+          
       }
     </style>
   </head>
@@ -22,19 +34,23 @@
       <h2>Please Enter the book and page numbers in the boxes below</h2>
       <div>
         <form method="POST", action="/display_page">
-          <label for="booknum">Book Number:</label><br>
-          <input type="text" id="booknum" name="booknum" placeholder="Book Number Here (1-7)" required><br>
-          <label for="pagenum">Page Number:</label><br>
-          <input type="text" id="pagenum" name="pagenum" placeholder="Page Number Here" required><br>
+          <label style="font-size:20pt;" for="booknum">Book Number:</label><br>
+          <input style="height:18px;font-size:12pt;" type="text" id="booknum" name="booknum" placeholder="Book Number Here (1-7)" required><br>
+          <label style="font-size:20pt" for="pagenum">Page Number:</label><br>
+          <input style="height:18px;font-size:12pt;"type="text" id="pagenum" name="pagenum" placeholder="Page Number Here" required><br>
           <label for="overlay">Show line numbers?</label>
           <input type="checkbox" id="overlay" name="overlay" checked><br><br>
           <input type="submit" value="Display Page!">
         </form>
       </div>
     </div>
-    <div>
+   <div>
       {% block display %}
       {% endblock %}
     </div>
   </body>
 </html>
+
+
+
+
