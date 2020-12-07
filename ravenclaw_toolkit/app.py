@@ -34,7 +34,7 @@ def handle_display_page():
                 lines = True
             else:
                 lines = False
-            return render_template('display_page.html', filename=utils.build_path(booknum, pagenum, lines), booknum=booknum, chapternum=chapter, chapter_pagenum=chapter_pagenum)
+            return render_template('display_page.html', filename=utils.build_path(booknum, pagenum, lines), bookname=constants.SHORT_TITLES[booknum-1], booknum=booknum, chapternum=chapter, chapter_pagenum=chapter_pagenum, chapter_beginning_pagenum=constants.CHAPTER_PAGE[booknum][chapter-1], pagenum=pagenum)
         elif valid == 0:
             return render_template('invalid_number.html', booknum=booknum, pagenum=pagenum, maxpagenum=constants.PAGE_NUMBERS[booknum-1] if 1<=booknum<=7 else 0)
         elif valid == -1:

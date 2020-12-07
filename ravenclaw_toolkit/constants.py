@@ -10,6 +10,13 @@ TITLES = ('Harry Potter and the Sorcerer\'s Stone',
          'Harry Potter and the Order of the Phoenix',
          'Harry Potter and the Half-Blood Prince',
          'Harry Potter and the Deathly Hallows')
+SHORT_TITLES = ('Sorcerer\'s Stone',
+         'Chamber of Secrets',
+         'Prisoner of Azkaban',
+         'Goblet of Fire',
+         'Order of the Phoenix',
+         'Half-Blood Prince',
+         'Deathly Hallows')
 
 TOTAL_PAGES = (309, 341, 435, 734, 870, 652, 759)
 

@@ -2,7 +2,7 @@
 
 {% block display %}
 
-<h2>Here is the page you requested! It is page {{chapter_pagenum}} of Chapter {{chapternum}} from Book {{booknum}}</h3>
+<h2>Here is the page you requested! Page {{pagenum}} is Page {{chapter_pagenum}} of Chapter {{chapternum}} from {{bookname}} (Chapter {{chapternum}} starts at page {{chapter_beginning_pagenum}})</h3>
 <img src="{{ url_for('static', filename=filename) }}" alt="{{'Error: Could not find ' + filename }}" height="906px" width="610px"/>
 
     {% endblock %}
