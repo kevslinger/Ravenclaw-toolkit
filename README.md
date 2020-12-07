@@ -2,6 +2,10 @@
 
 Hello, and welcome to our repository! We hope to write some cool tools to help people with Arithmancy. If you are planning to work on this as a developer, please see the [Developer](#developer) section.
 
+## Installation
+
+First, we need to get you set up with the proper python environment. We recommend using a virtual environment (like [virtualenv](https://pypi.org/project/virtualenv/)) for managing the dependencies. Once you have virtualenv installed, create a virtual environment with `virtualenv venv --python=python3`, then `source venv/bin/activate`. Then, install the dependencies with `pip install -r requirements.txt`. 
+
 ### PDF Splitter
 
 To split your Harry Potter PDFs into pages, first you'll need to move your PDFs into the `ravenclaw_toolkit/static` folder. Make sure they are named the following:
@@ -13,12 +17,12 @@ To split your Harry Potter PDFs into pages, first you'll need to move your PDFs 
 * Harry Potter and the Half-Blood Prince.pdf
 * Harry Potter and the Deathly Hallows.pdf
 
-Once you do that, you're ready to run our program! (For now, assume python experience). Open up your terminal and run `python3 ravenclaw_toolkit/book_splitter.py`. Your results will be waiting in the `ravenclaw_toolkit/static` folder! (`ravenclaw_toolkit/static/HP1` will contain all the pages of Sorcerer's Stone.)
+Once you've done that, you're ready to run our program! (For now, assume python experience). Open up your terminal and run `python ravenclaw_toolkit/book_splitter.py`. Your results will be waiting in the `ravenclaw_toolkit/static` folder! (`ravenclaw_toolkit/static/HP1` will contain all the pages of Sorcerer's Stone.)
 
 
 ### Display Page
 
-To view a single page of one of the books, You'll need to have populated your `ravenclaw_toolkit/static` folder with the PDF Splitter (See [PDF Splitter](#pdf-splitter)). Once you've done that, you can go back into your terminal and run `python3 ravenclaw_toolkit/display_page.py <book_num> <page_num>` and you'll see the page open! For example, `python3 display_page.py 4 100` opens the 100th page of Goblet of Fire.
+To view a single page of one of the books, You'll need to have populated your `ravenclaw_toolkit/static` folder with the PDF Splitter (See [PDF Splitter](#pdf-splitter)). Once you've done that, you can go back into your terminal and run `python ravenclaw_toolkit/display_page.py <book_num> <page_num>` and you'll see the page open! For example, `python display_page.py 4 100` opens the 100th page of Goblet of Fire, and adding the `--lines` option will add annotations to show you the line number of each line (try `python display_page.py 4 100 --lines`).
 
 
 ## Developer
@@ -32,7 +36,7 @@ mkdir instance
 touch config.py
 ```
 
-Then, fill in your secret key (one way to do this is to run `python3 -c 'import os; print(os.urandom(12))'`) and copy/paste the output. Specifically, your `config.py` should be 1-line and look something like `SECRET_KEY = b'm\xef\xc8\xef\x97v\x1c\xe3\xf0t=\xf6'`. After you do that, you'll need to populate the `ravenclaw_toolkit/static` folder with the texts. You can use the method outlined in the [PDF Splitter](#pdf-splitter) section, or provide your own. The directory structure is 
+Then, fill in your secret key (one way to do this is to run `python -c 'import os; print(os.urandom(12))'`) and copy/paste the output. Specifically, your `config.py` should be 1-line and look something like `SECRET_KEY = b'm\xef\xc8\xef\x97v\x1c\xe3\xf0t=\xf6'`. After you do that, you'll need to populate the `ravenclaw_toolkit/static` folder with the texts. You can use the method outlined in the [PDF Splitter](#pdf-splitter) section, or provide your own. The directory structure is 
 
 ```
 .
@@ -44,7 +48,7 @@ Then, fill in your secret key (one way to do this is to run `python3 -c 'import 
 |  +-- HP3
 ```
 
-(note: structure subject to change.) Once you have an `instance/config.py` and a populated `ravenclaw_toolkit/static`, then you need to make sure you have all the python dependencies installed. We recommend using a virtual environment (like [virtualenv](https://pypi.org/project/virtualenv/)) for managing the dependencies. Once you have virtualenv installed, create a virtual environment with `virtualenv venv --python=python3`, then `source venv/bin/activate`. Then, install the dependencies with `pip install -r requirements.txt`. 
+(note: structure subject to change.) Once you have an `instance/config.py` and a populated `ravenclaw_toolkit/static`.
 
 If you've gotten this far, you should be all set to run the web app locally!! Try running `python app.py`. The output should give you the URL to go to (for me, it is `http://127.0.0.1:5000/`)
 
