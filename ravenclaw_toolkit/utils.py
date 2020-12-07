@@ -38,7 +38,7 @@ def validate_book_page_number(book_number, page_number):
         else:
             return b, p, 0
     except ValueError:
-        return b, p, -1
+        return book_number, page_number, -1
 
     
 # util for binary search

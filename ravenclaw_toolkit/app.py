@@ -28,7 +28,7 @@ def landing():
 def handle_display_page():
     if request.method == 'POST':
         booknum, pagenum, valid = utils.validate_book_page_number(request.form.get('booknum'), request.form.get('pagenum'))
-        if valid:
+        if valid == 1:
             chapter, chapter_pagenum = utils.get_chapter_page(booknum, pagenum)
             if request.form.get('overlay'):
                 lines = True
