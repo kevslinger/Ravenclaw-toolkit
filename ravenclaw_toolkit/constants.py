@@ -3,6 +3,17 @@
 
 STATIC = 'static'
 
+TITLES = ('Harry Potter and the Sorcerer\'s Stone',
+         'Harry Potter and the Chamber of Secrets',
+         'Harry Potter and the Prisoner of Azkaban',
+         'Harry Potter and the Goblet of Fire',
+         'Harry Potter and the Order of the Phoenix',
+         'Harry Potter and the Half-Blood Prince',
+         'Harry Potter and the Deathly Hallows')
+
+TOTAL_PAGES = (309, 341, 435, 734, 870, 652, 759)
+
+
 # Total number of pages for each book, in order
 PAGE_NUMBERS = (309, 341, 435, 734, 870, 652, 759)
 
