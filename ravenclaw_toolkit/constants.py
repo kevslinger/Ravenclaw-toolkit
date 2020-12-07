@@ -1,5 +1,8 @@
 # File to be used for storing any and all constants
 
+
+STATIC = 'static'
+
 # Total number of pages for each book, in order
 PAGE_NUMBERS = (309, 341, 435, 734, 870, 652, 759)
 

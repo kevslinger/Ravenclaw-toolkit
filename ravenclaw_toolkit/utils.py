@@ -5,8 +5,12 @@ import os
 # Return the path to Book <booknum> and Page <pagenum>
 # Our directory structure (for some reason) is
 # HP<booknum>/hp<booknum>_<pagenum>.png
-def build_path(booknum, pagenum):
-    return os.path.join('HP' + str(booknum), 'hp' + str(booknum) + '_' + str(pagenum) + '.png')
+# lines is a flag for whether we should display the annotated page
+def build_path(booknum, pagenum, lines):
+    if lines:
+        return os.path.join('HP' + str(booknum), 'hp' + str(booknum) + '_' + str(pagenum) + '_lines.png')
+    else:
+        return os.path.join('HP' + str(booknum), 'hp' + str(booknum) + '_' + str(pagenum) + '.png')
 
 
 # If user enters < 1 or > 7, then it's not a canonical HP book!
@@ -36,11 +40,12 @@ def validate_book_page_number(book_number, page_number):
     except ValueError:
         return b, p, -1
 
-
-
+    
+# util for binary search
 def calculate_mid(lower_bound, upper_bound):
     return lower_bound + (upper_bound - lower_bound) // 2
-    
+
+
 # Determine what page number we're at relative to the beginning of the chapter (which is page 1 of that chapter)
 # Function returns:
 # Chapter: integer, the chapter we're in

@@ -30,7 +30,11 @@ def handle_display_page():
         booknum, pagenum, valid = utils.validate_book_page_number(request.form.get('booknum'), request.form.get('pagenum'))
         if valid:
             chapter, chapter_pagenum = utils.get_chapter_page(booknum, pagenum)
-            return render_template('display_page.html', filename=utils.build_path(booknum, pagenum), booknum=booknum, chapternum=chapter, chapter_pagenum=chapter_pagenum)
+            if request.form.get('overlay'):
+                lines = True
+            else:
+                lines = False
+            return render_template('display_page.html', filename=utils.build_path(booknum, pagenum, lines), booknum=booknum, chapternum=chapter, chapter_pagenum=chapter_pagenum)
         elif valid == 0:
             return render_template('invalid_number.html', booknum=booknum, pagenum=pagenum, maxpagenum=constants.PAGE_NUMBERS[booknum-1] if 1<=booknum<=7 else 0)
         elif valid == -1:
@@ -40,6 +44,7 @@ def handle_display_page():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)
-
+    # Comment out the line above and uncomment the one below if you want to work in dev mode.
+    #app.run(debug=True)
 
     
