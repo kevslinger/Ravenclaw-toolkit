@@ -5,8 +5,9 @@
 <h2>Invalid Entry: Looks like the Page you entered doesn't Exist!</h2>
 <p style="font-size: 2rem">
   You entered:<br>
-  Book Number: {{booknum}} ({{booktitle}})<br>
+  Book Number: {{booknum}}<br>
+  Chapter Number: {{chapternum}}<br>
   Page Number: {{pagenum}}<br>
-  But that book only has {{maxpagenum}} total pages!
+  But there are only {{maxbooknum}} books in our indexer! Please enter a valid book number.
 </p>
     {% endblock %}

@@ -2,10 +2,11 @@
 
 {% block display %}
 
-<h2>Invalid Data Format: Please ensure your <br>Book Number and Page Number are integers</h2>
+<h2>Invalid Data Format: Please ensure your <br>Book Number, Chapter number (if applicable), and Page Number are positive integers!</h2>
 <p style="font-size: 2rem">
   You entered:<br>
   Book Number: {{booknum}}<br>
+  Chapter Number: {{chapternum}}<br>
   Page Number: {{pagenum}}
 </p>
     {% endblock %}
