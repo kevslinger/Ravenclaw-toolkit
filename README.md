@@ -44,7 +44,9 @@ Then, fill in your secret key (one way to do this is to run `python -c 'import o
 |  +-- HP1
 |  +-- HP2
 |     +-- hp2_1.png
+|     +-- hp2_1_lines.png
 |     +-- hp2_2.png
+|     +-- hp2_2_lines.png
 |  +-- HP3
 ```
 
