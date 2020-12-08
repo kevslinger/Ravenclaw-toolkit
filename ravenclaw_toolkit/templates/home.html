@@ -26,6 +26,11 @@
           text-align: right;
           
       }
+      br {
+   display: block;
+   margin: 3px 0;
+   margin-top: 10px;
+}
     </style>
   </head>
   <body>
@@ -35,11 +40,11 @@
       <div>
     <form method="POST" action="/display_page">
           <label style="font-size:20pt;" for="booknum">Book Number:</label><br>
-          <input style="height:18px;font-size:12pt;" type="text" id="booknum" name="booknum" placeholder="Book Number Here (1-7)" required><br>
+          <input style="height:18px;font-size:12pt;" type="text" id="booknum" name="booknum" placeholder="Book Number Here (1-7)" required><br><br>
           <label style="font-size:20pt" for="pagenum">Page Number:</label><br>
-          <input style="height:18px;font-size:12pt;"type="text" id="pagenum" name="pagenum" placeholder="Page Number Here" required><br>
+          <input style="height:18px;font-size:12pt;"type="text" id="pagenum" name="pagenum" placeholder="Page Number Here" required><br><br>
           <label for="overlay">Show line numbers?</label>
-          <input type="checkbox" id="overlay" name="overlay" checked><br><br>
+          <input type="checkbox" id="overlay" name="overlay" checked><br>
           <input type="submit" value="Display Page!">
         </form>
       </div>
