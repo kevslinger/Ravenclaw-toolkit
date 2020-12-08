@@ -76,7 +76,7 @@ def handle_display_page():
                     else:
                         lines = False
                     # TODO: move the calculations of chapternum, etc. outside of the function call? Makes this call look hella bloated.
-                    return render_template('display_page.html', filename=utils.build_path(booknum, pagenum, lines), bookname=constants.SHORT_TITLES[booknum-1], booknum=booknum, chapternum=chapternum, chapter_pagenum=chapter_pagenum, chapter_beginning_pagenum=constants.CHAPTER_PAGE[booknum][chapternum-1], pagenum=pagenum)
+                    return render_template('display_page.html', filename=utils.build_path(booknum, pagenum, lines), bookname=constants.SHORT_TITLES[booknum-1], booknum=booknum, chapternum=chapternum, chaptertitle=constants.CHAPTER_NAME[booknum][chapternum-1], chapter_pagenum=chapter_pagenum, chapter_beginning_pagenum=constants.CHAPTER_PAGE[booknum][chapternum-1], pagenum=pagenum)
                 # Here, the page and book number are positive ints, but not within (1-7) for book number, of (1-book length) for page number
                 elif valid == constants.INVALID_NUMBER:
                     return render_template('invalid_number.html', booknum=booknum, booktitle=constants.SHORT_TITLES[booknum-1], pagenum=pagenum, maxpagenum=constants.TOTAL_PAGES[booknum-1] if 1<=booknum<=7 else 0)
