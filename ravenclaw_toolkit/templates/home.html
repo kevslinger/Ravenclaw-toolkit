@@ -36,12 +36,14 @@
   <body>
     <div class="content">
       <h1>Harry Potter Book Indexer</h1>
-      <h2>Please Enter the book and page numbers in the boxes below</h2>
+      <h2>Please Enter the book and page numbers in the boxes below. If you enter the chapter number as well, the page number will be relative to the chapter (e.g. Page 7 of Chapter 12)</h2>
       <div>
     <form method="POST" action="/display_page">
-          <label style="font-size:20pt;" for="booknum">Book Number:</label><br>
+          <label style="font-size:20pt;" for="booknum">Book Number:</label>
           <input style="height:18px;font-size:12pt;" type="text" id="booknum" name="booknum" placeholder="Book Number Here (1-7)" required><br><br>
-          <label style="font-size:20pt" for="pagenum">Page Number:</label><br>
+          <label style="font-size:20pt" for="chapternum">Chapter Number:</label>
+          <input style="height:18px;font-size:12pt;"type="text" id="chapternum" name="chapternum" placeholder="(Optional) Chapter Number"><br><br>
+          <label style="font-size:20pt" for="pagenum">Page Number:</label>
           <input style="height:18px;font-size:12pt;"type="text" id="pagenum" name="pagenum" placeholder="Page Number Here" required><br><br>
           <label for="overlay">Show line numbers?</label>
           <input type="checkbox" id="overlay" name="overlay" checked><br>
