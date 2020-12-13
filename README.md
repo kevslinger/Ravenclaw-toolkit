@@ -17,12 +17,12 @@ To split your Harry Potter PDFs into pages, first you'll need to move your PDFs 
 * Harry Potter and the Half-Blood Prince.pdf
 * Harry Potter and the Deathly Hallows.pdf
 
-Once you've done that, you're ready to run our program! (For now, assume python experience). Open up your terminal and run `python ravenclaw_toolkit/book_splitter.py`. Your results will be waiting in the `ravenclaw_toolkit/static` folder! (`ravenclaw_toolkit/static/HP1` will contain all the pages of Sorcerer's Stone.)
+Once you've done that, you're ready to run our program! (For now, assume python experience). Open up your terminal and run `python page_splitter.py`. Your results will be waiting in the `ravenclaw_toolkit/static` folder! (`ravenclaw_toolkit/static/HP1` will contain all the pages of Sorcerer's Stone.)
 
 
 ### Display Page
 
-To view a single page of one of the books, You'll need to have populated your `ravenclaw_toolkit/static` folder with the PDF Splitter (See [PDF Splitter](#pdf-splitter)). Once you've done that, you can go back into your terminal and run `python ravenclaw_toolkit/display_page.py <book_num> <page_num>` and you'll see the page open! For example, `python display_page.py 4 100` opens the 100th page of Goblet of Fire, and adding the `--lines` option will add annotations to show you the line number of each line (try `python display_page.py 4 100 --lines`).
+To view a single page of one of the books, You'll need to have populated your `ravenclaw_toolkit/static` folder with the PDF Splitter (See [PDF Splitter](#pdf-splitter)). Once you've done that, you can go back into your terminal and run `python display_page.py <book_num> <page_num>` and you'll see the page open! For example, `python display_page.py 4 100` opens the 100th page of Goblet of Fire, and adding the `--lines` option will add annotations to show you the line number of each line (try `python display_page.py 4 100 --lines`).
 
 
 ## Developer
