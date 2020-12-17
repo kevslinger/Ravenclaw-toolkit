@@ -31,6 +31,8 @@ class TestClass:
         total += 1
         successes += self.test_valid_page_number_true()
         total += 1
+        successes += self.test_valid_page_number_false()
+        total += 1
         print(f'{successes} tests passed and {total - successes} failed.')
         
 
@@ -92,6 +94,18 @@ class TestClass:
             return 1
         except AssertionError:
             print(fun_name + ' ' + FAILED)
+            return 0
+
+    def test_valid_page_number_false(self):
+        fun_name = 'test_valid_page_number_false'
+        correct = False
+        try:
+            assert correct == utils.valid_page_number(self.valid_booknum, self.invalid_pagenum)
+            print(fun_name + ' ' + SUCCESS)
+            return 1
+        except AssertionError:
+            print(fun_name + ' ' + FAILED)
+            return 0
 
 
 if __name__ == '__main__':
